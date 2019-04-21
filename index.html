@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <link rel="stylesheet" href="main.css" />
+    </head>
+    <body>
+        <h1>Engineering for Tomorrow</h1>
+
+        <button id="cta">Watch Here</button>
+        <div class="panel">
+            <img src="light.svg" alt="" id="light" />
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem, a sunt delectus doloribus accusamus sint?</p>
+            <div class="box"></div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+        <script>
+            const button = document.getElementById('cta');
+
+            button.addEventListener('click', () => {
+                TweenMax.to('.panel', 1, { scaleY: 1, height: '100vh', ease: Circ.easeOut });
+                TweenMax.to('#light', 1, { opacity: 1, y: 0, delay: 1, ease: Back.easeOut.config(1.7) });
+                TweenMax.to('p', 1, { opacity: 1, y: 20, delay: 1.4 });
+                TweenMax.to('.box', 3, { opacity: 1, scale: 1, ease: Elastic.easeOut.config(1, 0.3) });
+            });
+        </script>
+    </body>
+</html>
